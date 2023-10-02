@@ -1,0 +1,112 @@
+
+.user-registration-form-container {
+    flex-wrap: wrap;
+}
+
+.user-registration-form-container label,
+.user-registration-form-container input,
+.user-registration-form-container textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.user-registration-form-container input[type="submit"] {
+    width: auto;
+}
+
+.user-registration-form-container label {
+    font-weight: bold;
+}
+
+/* Estilo personalizado para os campos do formulário */
+.user-registration-form-container .half-width {
+    width: 47%;
+    margin-right: 3%;
+}
+
+.user-registration-form-container .two-thirds-width {
+    width: 61%;
+    margin-right: 3%;
+}
+
+.user-registration-form-container .one-third-width {
+    width: 33%;
+}
+.user-registration-form-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.user-registration-form-container .row label,
+.user-registration-form-container .row input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-edit-form-container {
+    flex-wrap: wrap;
+}
+
+.user-edit-form-container label,
+.user-edit-form-container input,
+.user-edit-form-container textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.user-edit-form-container input[type="submit"] {
+    width: auto;
+}
+
+.user-edit-form-container label {
+    font-weight: bold;
+}
+
+/* Estilo personalizado para os campos do formulário */
+.user-edit-form-container .half-width {
+    width: 47%;
+    margin-right: 3%;
+}
+
+.user-edit-form-container .two-thirds-width {
+    width: 61%;
+    margin-right: 3%;
+}
+
+.user-edit-form-container .one-third-width {
+    width: 33%;
+}
+.user-edit-form-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.user-edit-form-container .row label,
+.user-edit-form-container .row input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-import-form-container label,
+.user-import-form-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.user-import-form-container input[type="submit"] {
+    width: auto;
+}
+
+.user-import-form-container label {
+    font-weight: bold;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default !important;
+    background: #f5f5f5;
+}

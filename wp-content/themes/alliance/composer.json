@@ -1,0 +1,7 @@
+{
+    "require": {
+        "dompdf/dompdf": "^2.0",
+        "chillerlan/php-qrcode": "^4.3",
+        "phpoffice/phpspreadsheet": "^1.29"
+    }
+}

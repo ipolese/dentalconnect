@@ -1,0 +1,122 @@
+2023-09-07T18:36:48+00:00 CRITICAL Uncaught Error: Call to undefined function form_os_dentistas() in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php:229
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): custom_order_plugin_display_order_form('', '', 'custom_order_fo...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(custom...', 'do_shortcode_ta...', '\n[custom_order_...')
+#3 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[custom_order_...')
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[custom_order_...', Array)
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#6 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#8 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#10 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#12 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#13 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#14 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php, na linha 229
+
+2023-09-07T19:09:43+00:00 CRITICAL Uncaught Error: Call to undefined function edit_os_dentistas() in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php:254
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): edit_order_plugin_display_order_form('', '', 'edit_order_form')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(edit_o...', 'do_shortcode_ta...', '\n[edit_order_fo...')
+#3 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[edit_order_fo...')
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[edit_order_fo...', Array)
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#6 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#8 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#10 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#12 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#13 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#14 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php, na linha 254
+
+2023-09-07T19:33:48+00:00 CRITICAL Uncaught TypeError: explode(): Argument #2 ($string) must be of type string, array given in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php:388
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php(388): explode(', ', Array)
+#1 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php(254): edit_os_dentistas(false)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): edit_order_plugin_display_order_form('', '', 'edit_order_form')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(edit_o...', 'do_shortcode_ta...', '\n[edit_order_fo...')
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[edit_order_fo...')
+#6 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[edit_order_fo...', Array)
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#8 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#10 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#12 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#13 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#14 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#15 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#16 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php, na linha 388
+
+2023-09-07T19:33:53+00:00 CRITICAL Uncaught TypeError: explode(): Argument #2 ($string) must be of type string, array given in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php:388
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php(388): explode(', ', Array)
+#1 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php(254): edit_os_dentistas(false)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): edit_order_plugin_display_order_form('', '', 'edit_order_form')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(edit_o...', 'do_shortcode_ta...', '\n[edit_order_fo...')
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[edit_order_fo...')
+#6 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[edit_order_fo...', Array)
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#8 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#10 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#12 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#13 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#14 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#15 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#16 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php, na linha 388
+
+2023-09-07T19:34:06+00:00 CRITICAL Uncaught TypeError: explode(): Argument #2 ($string) must be of type string, array given in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php:388
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php(388): explode(', ', Array)
+#1 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php(254): edit_os_dentistas(false)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): edit_order_plugin_display_order_form('', '', 'edit_order_form')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(edit_o...', 'do_shortcode_ta...', '\n[edit_order_fo...')
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[edit_order_fo...')
+#6 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[edit_order_fo...', Array)
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#8 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#10 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#12 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#13 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#14 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#15 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#16 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php, na linha 388
+
+2023-09-07T19:34:12+00:00 CRITICAL Uncaught TypeError: explode(): Argument #2 ($string) must be of type string, array given in /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php:388
+Stack trace:
+#0 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php(388): explode(', ', Array)
+#1 /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/index.php(284): edit_os_dentistas(true)
+#2 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(395): view_order_plugin_display_order_form('', '', 'view_order_form')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 /home1/gomob/public_html/dentalconnect/wp-includes/shortcodes.php(235): preg_replace_callback('/\\[(\\[?)(view_o...', 'do_shortcode_ta...', '\n[view_order_fo...')
+#5 /home1/gomob/public_html/dentalconnect/wp-includes/class-wp-hook.php(310): do_shortcode('\n[view_order_fo...')
+#6 /home1/gomob/public_html/dentalconnect/wp-includes/plugin.php(205): WP_Hook->apply_filters('\n[view_order_fo...', Array)
+#7 /home1/gomob/public_html/dentalconnect/wp-includes/post-template.php(256): apply_filters('the_content', '<!-- wp:html --...')
+#8 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/skins/default/templates/content-page.php(38): the_content()
+#9 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(787): require('/home1/gomob/pu...')
+#10 /home1/gomob/public_html/dentalconnect/wp-includes/template.php(720): load_template('/home1/gomob/pu...', false, Array)
+#11 /home1/gomob/public_html/dentalconnect/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#12 /home1/gomob/public_html/dentalconnect/wp-content/themes/alliance/page.php(14): get_template_part('skins/default/t...', 'page')
+#13 /home1/gomob/public_html/dentalconnect/wp-includes/template-loader.php(106): include('/home1/gomob/pu...')
+#14 /home1/gomob/public_html/dentalconnect/wp-blog-header.php(19): require_once('/home1/gomob/pu...')
+#15 /home1/gomob/public_html/dentalconnect/index.php(17): require('/home1/gomob/pu...')
+#16 {main}
+  thrown, em /home1/gomob/public_html/dentalconnect/wp-content/plugins/custom_order_management_plugin/order_radiologia_edit.php, na linha 388
+

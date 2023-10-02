@@ -1,0 +1,205 @@
+# Translation of Plugins - Better Messages – Live Chat for WordPress, BuddyPress, PeepSo, Ultimate Member, BuddyBoss - Stable (latest release) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - Better Messages – Live Chat for WordPress, BuddyPress, PeepSo, Ultimate Member, BuddyBoss - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-12-22 11:00:05+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Plugins - Better Messages – Live Chat for WordPress, BuddyPress, PeepSo, Ultimate Member, BuddyBoss - Stable (latest release)\n"
+
+#: addons/buddyboss.php:139
+msgid "New message from %s"
+msgstr "Nova mensagem de %s"
+
+#: addons/buddyboss.php:140
+msgid "You have new message from %s"
+msgstr "Você possui uma nova mensagem de %s"
+
+#: inc/component.php:164
+msgctxt "Messages list sub nav"
+msgid "Messages"
+msgstr "Mensagens"
+
+#: inc/component.php:109
+msgctxt "Messages list sub nav"
+msgid "Messages <span class=\"%s bp-better-messages-unread count\">%s</span>"
+msgstr "Mensagens <span class=\"%s bp-better-messages-unread count\">%s</span>"
+
+#: inc/notifications.php:570
+msgid "Hi %s,"
+msgstr "Olá %s,"
+
+#: inc/notifications.php:573
+msgid "<a href=\"%s\">Go to the discussion</a> to reply or catch up on the conversation."
+msgstr "<a href=\"%s\">Vá para a discussão</a> para responder ou acompanhar a conversa."
+
+#: inc/functions.php:2269
+msgid "Get WebSocket License"
+msgstr "Obter licença WebSocket"
+
+#: inc/functions.php:2273
+msgid "<a href=\"%s\" target=\"_blank\">Download</a> and install Premium version of plugin to use this feature"
+msgstr "<a href=\"%s\" target=\"_blank\">Baixe</a> e instale a versão Premium do plugin para usar este recurso"
+
+#: addons/peepso.php:231 addons/ultimate-member.php:383 inc/hooks.php:1600
+msgid "You must become friends to send messages"
+msgstr "Vocês devem ser amigos para enviar mensagens"
+
+#: addons/giphy.php:304
+msgid "Search results will display here"
+msgstr "Os resultados da pesquisa serão exibidos aqui"
+
+#: addons/stickers.php:180 inc/notifications.php:356
+#: assets/js/bp-messages-free.js:6 assets/js/bp-messages-premium.js:6
+msgid "Sticker"
+msgstr "Figurinha"
+
+#: addons/buddyboss.php:259
+msgid "Left \"%s\""
+msgstr "Saiu \"%s\""
+
+#: addons/buddyboss.php:261
+msgid "Joined \"%s\""
+msgstr "Entrou \"%s\""
+
+#: addons/buddyboss.php:266
+msgid "This message was deleted."
+msgstr "Esta mensagem foi excluída."
+
+#: inc/hooks.php:1007
+msgid "You need to login to have access to profiles."
+msgstr "Você precisa fazer o login para ter acesso aos perfis."
+
+#: inc/hooks.php:1017
+msgid "This user does not exist."
+msgstr "Esse usuário não existe."
+
+#: inc/hooks.php:1089 inc/hooks.php:1097
+msgid "Your membership does not allow to use messages"
+msgstr "Sua assinatura não permite o uso de mensagens"
+
+#: inc/shortcodes.php:248
+msgid "Audio Call"
+msgstr "Chamada de Áudio"
+
+#: addons/buddypress.php:132 addons/buddypress.php:134
+#: addons/ultimate-member.php:447 addons/ultimate-member.php:464
+#: addons/ultimate-member.php:466 inc/hooks.php:975 inc/hooks.php:988
+#: inc/hooks.php:1035 inc/shortcodes.php:58 inc/shortcodes.php:113
+#: inc/shortcodes.php:300
+msgid "Private Message"
+msgstr "Mensagem privada"
+
+#: inc/shortcodes.php:197
+msgid "Video Call"
+msgstr "Chamada de Vídeo"
+
+#: addons/files.php:248
+msgid "attachments"
+msgstr "anexos"
+
+#: inc/notifications.php:450
+msgctxt "Email notification header for non BuddyPress websites"
+msgid "You have unread messages: \"%s\""
+msgstr "Você possui mensagens não lidas: \"%s\""
+
+#: addons/reactions.php:96 inc/rest-api.php:879
+msgid "Message not found"
+msgstr "Mensagem não encontrada"
+
+#: addons/peepso.php:203 addons/ultimate-member.php:356
+msgid "%s not on your friends list"
+msgstr "%s não está na sua lista de amigos"
+
+#. Plugin Name of the plugin
+#: addons/buddyboss/notifications/new-message.php:76 inc/options.php:251
+msgid "Better Messages"
+msgstr "Better Messages"
+
+#: inc/functions.php:1048 inc/functions.php:1067 inc/hooks.php:654
+#: views/layout-viewer.php:75
+msgid "Deleted User"
+msgstr "Usuário excluído"
+
+#: inc/functions.php:1079
+msgid "Profile picture of %s"
+msgstr "Foto do perfil de %s"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: inc/install.php:18 inc/notifications.php:109
+msgid "[{{{site.name}}}] You have unread messages: {{subject}}"
+msgstr "[{{{site.name}}}] Você possui mensagens não lidas: {{subject}}"
+
+#. translators: do not remove {} brackets or translate its contents.
+#: inc/install.php:20 inc/notifications.php:111
+msgid ""
+"You have unread messages: &quot;{{subject}}&quot;\n"
+"\n"
+"{{{messages.html}}}\n"
+"\n"
+"<a href=\"{{{thread.url}}}\">Go to the discussion</a> to reply or catch up on the conversation."
+msgstr ""
+"Você possui mensagens não lidas: &quot;{{subject}}&quot;\n"
+"\n"
+"{{{messages.html}}}\n"
+"\n"
+"<a href=\"{{{thread.url}}}\">Vá para a discussão</a> para responder ou acompanhar a conversa."
+
+#. translators: do not remove {} brackets or translate its contents.
+#: inc/install.php:22 inc/notifications.php:113
+msgid ""
+"You have unread messages: \"{{subject}}\"\n"
+"\n"
+"{{messages.raw}}\n"
+"\n"
+"Go to the discussion to reply or catch up on the conversation: {{{thread.url}}}"
+msgstr ""
+"Você possui mensagens não lidas: \"{{subject}}\"\n"
+"\n"
+"{{messages.raw}}\n"
+"\n"
+"Vá para a discussão para responder ou acompanhar a conversa: {{{thread.url}}}"
+
+#: inc/install.php:26 inc/notifications.php:117
+msgid "A member has unread private messages."
+msgstr "Um membro possui mensagens privadas não lidas."
+
+#: inc/notifications.php:389
+msgid "%s wrote:"
+msgstr "%s escreveu:"
+
+#: inc/hooks.php:958 inc/hooks.php:1040
+msgctxt "Messages list sub nav"
+msgid "Messages <span class=\"%s bp-better-messages-unread\">%s</span>"
+msgstr "Mensagens <span class=\"%s bp-better-messages-unread\">%s</span>"
+
+#: inc/component.php:131
+msgid "Starred"
+msgstr "Favoritos"
+
+#: addons/ultimate-member.php:400 inc/component-group.php:47
+#: inc/component.php:37 inc/hooks.php:617
+msgid "Messages"
+msgstr "Mensagens"
+
+#: inc/component.php:162
+msgctxt "Messages list sub nav"
+msgid "Messages <span class=\"%s\">%s</span>"
+msgstr "Mensagens <span class=\"%s\">%s</span>"
+
+#: inc/functions.php:1708
+msgid "Access restricted"
+msgstr "Acesso restrito"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.wordplus.org"
+msgstr "https://www.wordplus.org"
+
+#. Author of the plugin
+msgid "WordPlus"
+msgstr "WordPlus"

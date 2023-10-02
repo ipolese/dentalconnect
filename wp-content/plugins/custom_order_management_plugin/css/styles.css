@@ -1,0 +1,140 @@
+.order-form-container {
+    flex-wrap: wrap;
+}
+
+.order-form-container .input-group{
+    margin-top: 30px;
+    border: 1px solid #d9e0e3;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.label_in_border{
+    background: #fff;
+    position: absolute;
+    width: auto !important;
+    padding: 0 5px;
+    margin-top: -28px;
+}
+
+.order-form-container label,
+.order-form-container input,
+.order-form-container textarea {
+    width: 100%;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.order-form-container input[type="submit"] {
+    width: auto;
+}
+
+.order-form-container label {
+    font-weight: bold;
+}
+
+/* Estilo personalizado para os campos do formulário */
+.order-form-container .full-width {
+    width: 96%;
+    margin-right: 3%;
+}
+
+.order-form-container .half-width {
+    width: 47%;
+    margin-right: 3%;
+}
+
+.order-form-container .two-thirds-width {
+    width: 63%;
+    margin-right: 3%;
+}
+
+.order-form-container .one-third-width {
+    width: 30%;
+    margin-right: 3%;
+}
+.order-form-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.order-form-container .row_inline_simple,
+.order-form-container .row_inline {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.order-form-container .row_inline .group {
+    text-align: center;
+}
+
+.order-form-container .row_inline .group .divisor {
+    margin-left: 5px;
+    margin-right: 14px;
+    color: #d9e0e3;
+}
+
+.order-form-container .row label,
+.order-form-container .row input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.group label {
+    display: inline-block;;
+    width: 45px; 
+    margin-bottom: 5px;
+    position: relative;
+}
+
+input[type="date"] {
+    border: 1px solid;
+    padding: 9px;
+    border-radius: var(--theme-var-rad);
+    border-color: var(--theme-color-input_bd_color);
+    background-color: var(--theme-color-input_bg_color);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.02);
+}
+
+.input_line_bottom{
+    border: none !important;
+    border-bottom: 1px solid #d9e0e3 !important;
+    border-radius: 0px !important;
+    font-size: 16px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.arquivos{
+    margin: 13px 0px;
+}
+
+.arquivos a{
+    margin-right: 13px;
+}
+
+label.checkbox_label {
+    padding-left: 30px !important;    
+    font-size: 100% !important;
+}
+
+.docs{
+    font-weight: 300;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.row_inline label.checkbox_label {
+    padding-left: 1em !important;
+    font-size: 12px !important;
+    font-weight: 600;
+}
+
+.row_inline_simple label.checkbox_label {
+    width: auto !important;
+    font-size: 12px !important;
+    font-weight: 600;
+    margin-right: 20px;
+}
