@@ -20,10 +20,10 @@
 
 // ** Configurações do banco de dados - Você pode pegar estas informações com o serviço de hospedagem ** //
 /** O nome do banco de dados do WordPress */
-define( 'DB_NAME', 'gomob_dentalconnect' );
+define( 'DB_NAME', 'dentalconnect' );
 
 /** Usuário do banco de dados MySQL */
-define( 'DB_USER', 'gomob_dentalconnect' );
+define( 'DB_USER', 'dentalconnect' );
 
 /** Senha do banco de dados MySQL */
 define( 'DB_PASSWORD', 'Nwu}!DGoa}_Y' );
