@@ -8,7 +8,7 @@ Os arquivos aqui contidos permitirão que se tenha uma cópia do projeto para fi
 
 ### 📋 Banco de Dados
 
-O arquivo abaixo contém as configurações de BD
+Importe o arquivo dentalconnect.sql para seu servidor mysql e depois configure os acessos no arquivo abaixo
 
 ```
 wp-config
