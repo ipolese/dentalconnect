@@ -9,6 +9,9 @@ Author: Igor Polese
 require_once 'csv_user_import.php';
 require_once 'edit_my_user.php';
 require_once 'user_capabilities.php';
+require_once 'employee_user_edit.php';
+require_once 'employee_user_list.php';
+require_once 'employee_user_register.php';
 require_once 'user_edit.php';
 require_once 'user_list.php';
 require_once 'user_register.php';

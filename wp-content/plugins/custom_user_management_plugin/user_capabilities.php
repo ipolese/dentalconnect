@@ -16,6 +16,22 @@ function add_capabilities_laboratorio() {
 }
 add_action( 'init', 'add_capabilities_laboratorio' );
 
+function add_capabilities_func_laboratorio() {
+    // Obtém o objeto WP_Roles
+    $wp_roles = wp_roles();
+
+    // Verifica se o papel "Funcionário Laboratório" já existe
+    if ( ! isset( $wp_roles->roles['funcionario_lab'] ) ) {
+        // Obtém as capacidades do papel "Editor"
+        $editor_capabilities = $wp_roles->roles['editor']['capabilities'];
+        $editor_capabilities['create_users'] = true;
+
+        // Cria o novo papel "Funcionário Laboratório" com as mesmas capacidades do papel "Editor"
+        $wp_roles->add_role( 'funcionario_lab', 'Funcionário Laboratório', $editor_capabilities );
+    }
+}
+add_action( 'init', 'add_capabilities_func_laboratorio' );
+
 function add_capabilities_clinica() {
     // Obtém o objeto WP_Roles
     $wp_roles = wp_roles();

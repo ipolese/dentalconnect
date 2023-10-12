@@ -30,7 +30,7 @@ function list_os_shortcode() {
         $post_type = array('os_radiologia', 'os_laboratorio');
     } elseif (in_array('dentista', $current_user->roles) || in_array('radiologia', $current_user->roles)) {
         $post_type = 'os_radiologia';
-    } elseif (in_array('clinica', $current_user->roles) || in_array('laboratorio', $current_user->roles)) {
+    } elseif (in_array('clinica', $current_user->roles) || in_array('laboratorio', $current_user->roles) || in_array('funcionario_lab', $current_user->roles)) {
         $post_type = 'os_laboratorio';
     } 
 
@@ -51,6 +51,7 @@ function list_os_shortcode() {
             $nome_do_dentista = get_field('nome_do_dentista', $post_id);
             $nome = get_field('nome', $post_id);
             $criado_por = get_field('criado_por', $post_id);
+            $atribuido_para = get_field('atribuido_para', $post_id);
             $concluida = get_field('concluida', $post_id);
                 
             if($post_type == 'os_laboratorio'){
@@ -60,6 +61,7 @@ function list_os_shortcode() {
             }
 
             if(in_array('administrator', $current_user->roles) || 
+                in_array('funcionario_lab', $current_user->roles) || 
                 $current_user->ID == $criado_por ||  
                 $current_user->ID == $user_valor){
                 
@@ -76,13 +78,19 @@ function list_os_shortcode() {
                     $output .= ' | ';
                     $output .= '<a href="' . esc_url(add_query_arg('id', get_the_ID(), site_url('/gerar-pdf-os'))) . '" target="_blank">Gerar PDF</a>';
 
-                    if (($user_valor != '') && ($user_valor == $usuario_pai)) {
+                    if ((($user_valor != '') && ($user_valor == $usuario_pai) || (in_array('funcionario_lab', $current_user->roles)))) {
                         $output .= ' | ';
                         $output .= '<a href="' . esc_url(get_permalink(get_page_by_path('editar-os'))) . '?id=' . $post_id . '">Editar</a>';
+                    } 
+                    if (($user_valor != '') && ($user_valor == $usuario_pai)) {
                         $output .= ' | ';
                         $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'delete_post', 'post_id' => $post_id))) . '" onclick="return confirm(\'Tem certeza que deseja excluir esta OS?\')">Excluir</a>';
                     } 
-                    elseif ($user_valor == $current_user->ID) {
+                    if ($atribuido_para == '' && (in_array('funcionario_lab', $current_user->roles))) {
+                        $output .= ' | ';
+                        $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'assigned', 'assigned' => $current_user->ID, 'id' => $post_id))) . '">Atribuir para mim</a>';
+                    }
+                    if (($user_valor == $current_user->ID) || (in_array('funcionario_lab', $current_user->roles))) {
                         $output .= ' | ';
                         $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'true', 'id' => $post_id))) . '">Concluir</a>';
                     }
@@ -104,9 +112,20 @@ function list_os_shortcode() {
 }
 add_shortcode('list_os', 'list_os_shortcode');
 
+add_action('init', 'assigned_action');
+function assigned_action() {
+    if (isset($_GET['action']) && $_GET['action'] === 'assigned' && $_GET['assigned'] && isset($_GET['id'])) {
+        $id = intval($_GET['id']);
+        update_field('atribuido_para', $_GET['assigned'], $id);
+
+        wp_safe_redirect(wp_get_referer());
+        exit;
+    }
+}
+
 add_action('init', 'complete_action');
 function complete_action() {
-    if (isset($_GET['action']) && $_GET['action'] === 'complete'  && $_GET['complete'] === 'true' && isset($_GET['id'])) {
+    if (isset($_GET['action']) && $_GET['action'] === 'complete' && $_GET['complete'] === 'true' && isset($_GET['id'])) {
         $id = intval($_GET['id']);
         update_field('concluida', true, $id);
 
@@ -123,7 +142,7 @@ function list_os_complete_shortcode() {
         $post_type = array('os_radiologia', 'os_laboratorio');
     } elseif (in_array('dentista', $current_user->roles) || in_array('radiologia', $current_user->roles)) {
         $post_type = 'os_radiologia';
-    } elseif (in_array('clinica', $current_user->roles) || in_array('laboratorio', $current_user->roles)) {
+    } elseif (in_array('clinica', $current_user->roles) || in_array('laboratorio', $current_user->roles) || in_array('funcionario_lab', $current_user->roles)) {
         $post_type = 'os_laboratorio';
     } 
 
@@ -153,6 +172,7 @@ function list_os_complete_shortcode() {
             }
 
             if(in_array('administrator', $current_user->roles) || 
+                in_array('funcionario_lab', $current_user->roles) || 
                 $current_user->ID == $criado_por || 
                 $current_user->ID == $user_valor){
 
@@ -169,7 +189,7 @@ function list_os_complete_shortcode() {
                     $output .= ' | ';
                     $output .= '<a href="' . esc_url(add_query_arg('id', get_the_ID(), site_url('/gerar-pdf-os'))) . '" target="_blank">Gerar PDF</a>';
 
-                    if ($user_valor == $current_user->ID) {
+                    if (($user_valor == $current_user->ID) || (in_array('funcionario_lab', $current_user->roles))){
                         $output .= ' | ';
                         $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'false', 'id' => $post_id))) . '">Reabrir</a>';
                     }
@@ -233,7 +253,7 @@ function custom_order_plugin_display_order_form() {
 
             if (in_array('dentista', $current_user->roles)) {
                 form_os_dentistas();
-            } elseif (in_array('clinica', $current_user->roles)) {
+            } elseif ((in_array('clinica', $current_user->roles)) || (in_array('funcionario_lab', $current_user->roles))) {
                 form_os_clinicas();
             }
         ?>
@@ -260,7 +280,7 @@ function edit_order_plugin_display_order_form() {
 
             if (in_array('dentista', $current_user->roles)) {
                 edit_os_dentistas($view);
-            } elseif (in_array('clinica', $current_user->roles)) {
+            } elseif ((in_array('clinica', $current_user->roles)) || (in_array('funcionario_lab', $current_user->roles))) {
                 edit_os_clinicas($view);
             }
         ?>
@@ -286,7 +306,7 @@ function view_order_plugin_display_order_form() {
             $view = true;
 
             $allowed_roles_dentista = array('administrator', 'radiologia', 'dentista');
-            $allowed_roles_clinica = array('administrator', 'laboratorio', 'clinica');
+            $allowed_roles_clinica = array('administrator', 'funcionario_lab', 'laboratorio', 'clinica');
 
             if (array_intersect($allowed_roles_dentista, $current_user->roles)) {
                 edit_os_dentistas($view);
