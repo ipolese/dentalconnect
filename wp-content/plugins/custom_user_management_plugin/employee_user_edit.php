@@ -17,6 +17,8 @@ function display_employee_user_edit_form() {
         // Obtenha os dados do formulário
         $first_name = sanitize_user($_POST['first_name']);
         $email = sanitize_email($_POST['email']);
+        $telefone = sanitize_text_field($_POST['telefone']);
+        $celular = sanitize_text_field($_POST['celular']);
         $setor = sanitize_text_field($_POST['setor']);
         $comissao = sanitize_text_field($_POST['comissao']);
 
@@ -28,6 +30,8 @@ function display_employee_user_edit_form() {
                 'user_email' => $email,
             ));
 
+            update_field('telefone', $telefone, 'user_' . $user_id);
+            update_field('celular', $celular, 'user_' . $user_id);
             update_field('setor', $setor, 'user_' . $user_id);
             update_field('comissao', $comissao, 'user_' . $user_id);
         }
@@ -52,6 +56,18 @@ function display_employee_user_edit_form() {
                 <div class="half-width">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" value="<?php echo isset($user_data) ? esc_attr($user_data->user_email) : ''; ?>" required>
+                </div>
+            </div>   
+
+            <div class="row">
+                <div class="half-width">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" value="<?php echo isset($user_data) ? esc_attr(get_field('telefone', 'user_' . $user_id)) : ''; ?>" required>
+                </div>
+
+                <div class="half-width">
+                    <label for="celular">Celular</label>
+                    <input type="text" name="celular" value="<?php echo isset($user_data) ? esc_attr(get_field('celular', 'user_' . $user_id)) : ''; ?>" required>
                 </div>
             </div>  
 

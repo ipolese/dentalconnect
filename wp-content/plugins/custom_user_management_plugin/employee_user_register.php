@@ -18,6 +18,8 @@ function display_employee_user_registration_form() {
             echo '<script>alert("Este email já está em uso. Por favor, escolha outro.");</script>';
         } else {
 
+            $telefone = sanitize_text_field($_POST['telefone']);
+            $celular = sanitize_text_field($_POST['celular']);
             $setor = sanitize_text_field($_POST['setor']);
             $comissao = sanitize_text_field($_POST['comissao']);
             //$password = wp_generate_password();
@@ -39,6 +41,8 @@ function display_employee_user_registration_form() {
 
                 update_field('usuario_pai', $usuario_pai, 'user_' . $user_id);
 
+                update_field('telefone', $telefone, 'user_' . $user_id);
+                update_field('celular', $celular, 'user_' . $user_id);
                 update_field('setor', $setor, 'user_' . $user_id);
                 update_field('comissao', $comissao, 'user_' . $user_id);
                 update_field('visivel', true, 'user_' . $user_id);
@@ -67,6 +71,18 @@ function display_employee_user_registration_form() {
                 <div class="half-width">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="half-width">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" required>
+                </div>
+
+                <div class="half-width">
+                    <label for="celular">Celular</label>
+                    <input type="text" name="celular" required>
                 </div>
             </div>
 

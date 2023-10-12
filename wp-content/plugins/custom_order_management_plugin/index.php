@@ -86,13 +86,28 @@ function list_os_shortcode() {
                         $output .= ' | ';
                         $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'delete_post', 'post_id' => $post_id))) . '" onclick="return confirm(\'Tem certeza que deseja excluir esta OS?\')">Excluir</a>';
                     } 
-                    if ($atribuido_para == '' && (in_array('funcionario_lab', $current_user->roles))) {
-                        $output .= ' | ';
-                        $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'assigned', 'assigned' => $current_user->ID, 'id' => $post_id))) . '">Atribuir para mim</a>';
+                    if(in_array('funcionario_lab', $current_user->roles)){
+
+                        if (($atribuido_para) == 1 || ($atribuido_para == '')) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'assigned', 'assigned' => $current_user->ID, 'id' => $post_id))) . '">Atribuir para mim</a>';
+                        }
+                        
+                        if ($atribuido_para == $current_user->ID) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'assigned', 'assigned' => 1, 'id' => $post_id))) . '">Remover Atribuição</a>';
+                        }
+
+                        if (($atribuido_para == $current_user->ID) || (($user_valor == $current_user->ID))) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'true', 'id' => $post_id))) . '">Concluir</a>';
+                        }
                     }
-                    if (($user_valor == $current_user->ID) || (in_array('funcionario_lab', $current_user->roles))) {
-                        $output .= ' | ';
-                        $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'true', 'id' => $post_id))) . '">Concluir</a>';
+                    else{
+                        if (($user_valor == $current_user->ID)) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'true', 'id' => $post_id))) . '">Concluir</a>';
+                        }
                     }
 
                     $output .= '</td>';
@@ -163,6 +178,7 @@ function list_os_complete_shortcode() {
             $nome_do_dentista = get_field('nome_do_dentista', $post_id);
             $nome = get_field('nome', $post_id);
             $criado_por = get_field('criado_por', $post_id);
+            $atribuido_para = get_field('atribuido_para', $post_id);
             $concluida = get_field('concluida', $post_id);
                 
             if($post_type == 'os_laboratorio'){
@@ -189,9 +205,17 @@ function list_os_complete_shortcode() {
                     $output .= ' | ';
                     $output .= '<a href="' . esc_url(add_query_arg('id', get_the_ID(), site_url('/gerar-pdf-os'))) . '" target="_blank">Gerar PDF</a>';
 
-                    if (($user_valor == $current_user->ID) || (in_array('funcionario_lab', $current_user->roles))){
-                        $output .= ' | ';
-                        $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'false', 'id' => $post_id))) . '">Reabrir</a>';
+                    if(in_array('funcionario_lab', $current_user->roles)){
+                        if (($atribuido_para == $current_user->ID) && (($user_valor == $current_user->ID))) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'false', 'id' => $post_id))) . '">Reabrir</a>';
+                        }
+                    }
+                    else{
+                        if (($user_valor == $current_user->ID)) {
+                            $output .= ' | ';
+                            $output .= '<a href="' . esc_url(add_query_arg(array('action' => 'complete', 'complete' => 'false', 'id' => $post_id))) . '">Reabrir</a>';
+                        }
                     }
 
                     $output .= '</td>';

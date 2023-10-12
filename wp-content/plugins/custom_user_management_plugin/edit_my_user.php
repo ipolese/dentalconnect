@@ -12,6 +12,8 @@ function display_my_user_edit_form() {
     $last_name = $current_user->last_name;
     $user_login = $current_user->user_login;
     $email = $current_user->user_email;
+    $telefone = get_field('telefone', 'user_' . $current_user->ID);
+    $celular = get_field('celular', 'user_' . $current_user->ID);
     $cep = get_field('cep', 'user_' . $current_user->ID);
     $rua = get_field('rua', 'user_' . $current_user->ID);
     $numero = get_field('numero', 'user_' . $current_user->ID);
@@ -27,6 +29,8 @@ function display_my_user_edit_form() {
         $new_first_name = sanitize_text_field($_POST['first_name']);
         $new_last_name = sanitize_text_field($_POST['last_name']);
         $new_email = sanitize_email($_POST['email']);
+        $new_telefone = sanitize_text_field($_POST['telefone']);
+        $new_celular = sanitize_text_field($_POST['celular']);
         $new_cep = sanitize_text_field($_POST['cep']);
         $new_rua = sanitize_text_field($_POST['rua']);
         $new_numero = sanitize_text_field($_POST['numero']);
@@ -46,6 +50,8 @@ function display_my_user_edit_form() {
             'user_email' => $new_email,
         ));
 
+        update_field('telefone', $new_telefone, 'user_' . $current_user->ID);
+        update_field('celular', $new_celular, 'user_' . $current_user->ID);
         update_field('cep', $new_cep, 'user_' . $current_user->ID);
         update_field('rua', $new_rua, 'user_' . $current_user->ID);
         update_field('numero', $new_numero, 'user_' . $current_user->ID);
@@ -91,6 +97,18 @@ function display_my_user_edit_form() {
                     <input type="email" name="email" value="<?php echo esc_attr($email); ?>" required>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="half-width">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" value="<?php echo esc_attr($telefone); ?>" required>
+                </div>
+
+                <div class="half-width">
+                    <label for="celular">Celular</label>
+                    <input type="text" name="celular" value="<?php echo esc_attr($celular); ?>" required>
+                </div>
+            </div> 
 
             <label for="cep">CEP</label>
             <input type="text" name="cep" value="<?php echo esc_attr($cep); ?>" required>
